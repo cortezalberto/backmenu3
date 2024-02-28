@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "d47c1403-0aff-4222-959a-65523b681b7e",
+		"name": "Menu App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12379877"
+	},
+	"item": [
+		{
+			"name": "Crear Empresa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"razonSocial\":\"vender empanadas\",\r\n    \"nombre\":\"empanaditas srl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{menu_app_host}}/empresas"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todas las Empresas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{menu_app_host}}/empresas"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Empresa por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{menu_app_host}}/empresas/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Empresa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"razonSocial\": \"vender sanguches cambiado\",\r\n    \"nombre\": \"lo de brown\",\r\n    \"sucursales\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/empresas/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Empresa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/empresas/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Asignar Sucursales a una Empresa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{menu_app_host}}/empresas/asignarSucursales/1?sucursalesIds=1",
+					"host": [
+						"{{menu_app_host}}"
+					],
+					"path": [
+						"empresas",
+						"asignarSucursales",
+						"1"
+					],
+					"query": [
+						{
+							"key": "sucursalesIds",
+							"value": "1"
+						},
+						{
+							"key": "sucursalesIds",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Sucursales",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"empanaditas en el centro\",\r\n    \"empresaId\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{menu_app_host}}/sucursales"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todas las Sucursales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/sucursales"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Sucursal por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/sucursales/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Sucursal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"lo de brown del centro cambiado\",\r\n    \"direccion\": null,\r\n    \"categorias\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/sucursales/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Sucursal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/sucursales/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Asignar Direccion a Sucursal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sucursales/asignarDireccion/1?idDireccion=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sucursales",
+						"asignarDireccion",
+						"1"
+					],
+					"query": [
+						{
+							"key": "idDireccion",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asignar Categorias a Sucursal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sucursales/asignarCategorias/1?idsCategorias=1&idsCategorias=2&idsCategorias=3&idsCategorias=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sucursales",
+						"asignarCategorias",
+						"1"
+					],
+					"query": [
+						{
+							"key": "idsCategorias",
+							"value": "1"
+						},
+						{
+							"key": "idsCategorias",
+							"value": "2"
+						},
+						{
+							"key": "idsCategorias",
+							"value": "3"
+						},
+						{
+							"key": "idsCategorias",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Categorias de una Sucursal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/sucursales/obtenerCategorias/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Direccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"calle\":\"Almirante Brown\",\r\n    \"numero\":1200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/direcciones"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todas las Direcciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/direcciones"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Direccion por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/direcciones/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Direccion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"calle\": \"Viamonte cambiado\",\r\n    \"numero\": 2783\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/direcciones/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Direccion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/direcciones/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Categoria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"gaseosas\",\r\n    \"categoriaPadreId\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/categorias"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todas las Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/categorias"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Categoria por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/categorias/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2,\r\n        \"nombre\": \"pizzas\",\r\n        \"productos\": [],\r\n        \"combos\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/categorias/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar categorias",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/categorias/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Asginar Productos a Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias/asignarProductos/2?idsProductos=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"asignarProductos",
+						"2"
+					],
+					"query": [
+						{
+							"key": "idsProductos",
+							"value": "2"
+						},
+						{
+							"key": "idsProductos",
+							"value": "8",
+							"disabled": true
+						},
+						{
+							"key": "idsProductos",
+							"value": "6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"levite pomelo\",\r\n    \"precio\":30,\r\n    \"descripcion\":\"una levite sabor a pomelo\",\r\n    \"imagenUrl\":\"26a49196-deea-4c3b-90b2-af3e821dd0c9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/productos"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todos los Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/productos"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Producto por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/productos/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"nombre\": \"pizza especial editada\",\r\n    \"precio\": 120,\r\n    \"descripcion\": \"una pizza con jamon y queso\",\r\n    \"imagenId\": \"a84bd416-c73f-428a-9bf3-cb04a887dab6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/productos/7"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/productos/6"
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/productos/filtrar"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Combo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"combos papitas\",\r\n    \"precio\":70,\r\n    \"descripcion\":\"papitas con unas cervecitas\",\r\n    \"imagenUrl\":\"\",\r\n    \"productoCombos\":[\r\n        {\r\n            \"cantidad\":2,\r\n            \"productoId\":3\r\n        },\r\n        {\r\n            \"cantidad\":1,\r\n            \"productoId\":2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/combos"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todos los Combos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/combos"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Combo por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/combos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Combo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"combos papitas cambiadaso\",\r\n    \"precio\": 100,\r\n    \"descripcion\": \"papitas con unas cervecitas\",\r\n    \"imagenId\": \"\",\r\n    \"productoCombos\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/combos/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Combo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/combos/1"
+			},
+			"response": []
+		}
+	]
+}

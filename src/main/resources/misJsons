@@ -1,0 +1,135 @@
+#### EMPRESAS ####
+{
+    "razonSocial":"vender sanguches",
+    "nombre":"lo de brown"
+}
+
+{
+    "razonSocial":"vender empanadas",
+    "nombre":"empanaditas srl"
+}
+
+#### SUCURSALES ####
+
+{
+    "nombre":"lo de brown de la rotonda",
+    "empresaId":1
+}
+
+{
+    "nombre":"lo de brown del centro",
+    "empresaId":2
+}
+
+{
+    "nombre":"empanaditas en godoy cruz",
+    "empresaId":null
+}
+
+
+#### DIRECCIONES ####
+
+{
+    "calle":"Mainpulen",
+    "numero":250
+}
+
+{
+    "calle":"Viamonte",
+    "numero":2783
+}
+
+{
+    "calle":"Almirante Brown",
+    "numero":1200
+}
+
+#### CATEGORIAS ####
+
+{
+    "nombre":"bebidas",,
+    "categoriaPadreId":null
+}
+
+{
+    "nombre":"tragos",,
+    "categoriaPadreId":1
+}
+
+{
+    "nombre":"gaseosas",,
+    "categoriaPadreId":1
+}
+
+{
+    "nombre":"pizzas",
+     "categoriaPadreId":null
+}
+
+{
+    "nombre":"hamburguesas",
+    "categoriaPadreId":null
+}
+
+#### PRODUCTOS ####
+
+{
+    "nombre":"pizza napolitana",
+    "precio":40,
+    "descripcion":"una pizza con tomate rica",
+    "imagenId":"e4794e56-4250-4797-ac0e-0d08bc487531"
+}
+
+{
+    "nombre":"pizza honguitos",
+    "precio":120,
+    "descripcion":"una pizza con hongos de holanda",
+    "imagenId":"f6c69c8c-2901-4d3a-abab-0b3e411d0ef1"
+}
+
+{
+    "nombre": "pizza especial",
+    "precio": 120,
+    "descripcion": "una pizza con jamon y queso",
+    "imagenId": "a84bd416-c73f-428a-9bf3-cb04a887dab6"
+}
+
+{
+    "nombre": "hamburguesa rockefeller",
+    "precio": 60,
+    "descripcion": "una hamburguesa con poder de monopolio",
+    "imagenId": "fd94a07e-d076-49ed-95e4-98a194fa11a1"
+}
+
+{
+    "nombre": "coca",
+    "precio": 30,
+    "descripcion": "una coca cola",
+    "imagenId": "26392f4c-759a-4161-adda-b13894d361c5"
+}
+
+{
+    "nombre":"levite pomelo",
+    "precio":30,
+    "descripcion":"una levite sabor a pomelo",
+    "imagenId":"26a49196-deea-4c3b-90b2-af3e821dd0c9"
+}
+
+
+#### COMBOS ####
+{
+    "nombre":"combo hawaiano",
+    "precio":70,
+    "descripcion":"pizza con dos gasesosas coca cola",
+    "imagenId":"",
+    "productoCombos":[
+        {
+            "cantidad":1,
+            "productoId":2
+        },
+        {
+            "cantidad":2,
+            "productoId":5
+        }
+    ]
+}
